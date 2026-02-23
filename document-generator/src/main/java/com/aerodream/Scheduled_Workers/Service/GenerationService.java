@@ -19,7 +19,8 @@ public class GenerationService {
 
     public void generateDocument(GenerateRequestDto requestDto) {
         log.info("Generating {} documents in progress", requestDto.count());
-        sendGenerateToService(requestDto);
+        if (requestDto.count() == 0) return;
+        else sendGenerateToService(requestDto);
     }
 
     private void sendGenerateToService(GenerateRequestDto requestDto) {

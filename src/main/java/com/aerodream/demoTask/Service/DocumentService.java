@@ -58,6 +58,7 @@ public class DocumentService {
 
     @Transactional(readOnly = true)
     public DocumentWithHistoryResponseDto getDocumentById(long id) {
+        log.info("Fetching document with ID: {}", id);
         DocumentEntity entity = documentRepository.findById(id)
                 .orElseThrow(
                         () -> new DocumentNotFoundException(id)
