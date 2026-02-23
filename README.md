@@ -45,6 +45,8 @@
 
 */gradlew bootRun*
 
+##### Сервис будет доступен по адресу: *http://localhost:8081*
+
 ## **API :**
 
 ### **document-generator :**
