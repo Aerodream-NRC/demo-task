@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    enabled: false
+  application:
+    name: document-generator
+service:
+  base-url: http://demo-task:8080
+server:
+  port: 8081

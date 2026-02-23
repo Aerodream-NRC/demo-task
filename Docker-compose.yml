@@ -1,0 +1,54 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_DB: documents_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - network
+
+  demo-task:
+    build:
+      context: .
+      dockerfile: Dockerfile.demo-task
+    container_name: demo-task
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/documents_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - network
+
+  document-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile.document-generator
+    container_name: document-generator
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD:
+    ports:
+      - "8081:8081"
+    networks:
+      - network
+
+volumes:
+  postgres-data:
+
+networks:
+  network:
+    driver: bridge

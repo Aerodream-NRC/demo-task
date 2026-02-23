@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    enabled: false
+  application:
+    name: document-generator
+service:
+  base-url: http://localhost:8080
+server:
+  port: 8081

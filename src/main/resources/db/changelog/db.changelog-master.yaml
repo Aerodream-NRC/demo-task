@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changes/001-create-document-table.sql
+  - include:
+      file: classpath:/db/changelog/changes/002-create-history-table.sql
+  - include:
+      file: classpath:/db/changelog/changes/003-create-approval-register-table.sql

@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/documents_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true
+  application:
+    name: demo-task
+service:
+  base-url: http://localhost:8080
+workers:
+  submit:
+    batch-size: 500
+    fixed-delay: 10000
+  approve:
+    batch-size: 500
+    fixed-delay: 10000
+server:
+  port: 8080
