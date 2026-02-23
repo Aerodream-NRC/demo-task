@@ -2,7 +2,7 @@
 
 ```sql
 SELECT * FROM document
-WHERE sstatus = 'DRAFT'
+WHERE status = 'DRAFT'
 ORDER BY created_at DESC
 LIMIT 20;
 ```
