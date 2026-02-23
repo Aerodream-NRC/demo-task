@@ -10,35 +10,42 @@
 Технологии :
 
  - **Java 21**
- - **Spring Boot 4 / Spring WebFlux**
+ - **Spring Boot**
  - **Gradle**
  - **PostgreSQL**
  - **Docker**
 
 **Запуск проекта :**
 
-Запуск в Docker
+Запуск в Docker :
  - Соберите JAR-файл:
 Выберите дерикторию проекта и затем выполните команду :
 
 */gradlew clean build -x test*
 
-запустите Docker-compose файл:
+ - запустите Docker-compose файл:
 
 */docker-compose up -d --build*
 
 Локальный запуск *(без Docker)*
-После запуска в докере выполните эту команду :
-*/docker stop demo-task document-generator*
-Перейдите в корневую папку проекта demo-task.
-Выполните команду:
-*/gradlew bootRun*
-Сервис будет доступен по адресу: *http://localhost:8080*
-Затем перейдите в папку 
-document-generator и выполните команду
-/gradlew bootRun
 
-API :
+ - После запуска в докере выполните эту команду :
+
+*/docker stop demo-task document-generator*
+
+ - Перейдите в корневую папку проекта demo-task.
+
+ - Выполните команду:
+
+*/gradlew bootRun*
+
+Сервис будет доступен по адресу: *http://localhost:8080*
+
+ - Затем перейдите в папку document-generator и выполните команду
+
+*/gradlew bootRun*
+
+**API :**
 
 **document-generator :**
 
@@ -47,7 +54,7 @@ API :
 **POST** *http://localhost:8081/api/generate*
 
 Тело запроса :
- - **count** --- количество документов для генерации
+ - **count** - количество документов для генерации
  - **authorPrefix** - префикс автора при генерации *опционально*
  - **namePrefix** - префикс названия документа *опционально*
 
