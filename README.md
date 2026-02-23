@@ -21,30 +21,30 @@
 #### - Соберите JAR-файл:
 #### - Выберите дерикторию проекта и затем выполните команду :
 ```bash
-*/gradlew clean build -x test*
+/gradlew clean build -x test
 ```
 #### - запустите Docker-compose файл:
-
-*/docker-compose up -d --build*
-
+```bash
+/docker-compose up -d --build
+```
 ### Локальный запуск *(без Docker)*
 
 #### - После запуска в докере выполните эту команду :
-
-*/docker stop demo-task document-generator*
-
+```bash
+/docker stop demo-task document-generator
+```
 #### - Перейдите в корневую папку проекта demo-task.
 
 #### - Выполните команду:
-
-*/gradlew bootRun*
-
+```bash
+/gradlew bootRun
+```
 ##### Сервис будет доступен по адресу: *http://localhost:8080*
 
 #### - Затем перейдите в папку document-generator и выполните команду
-
-*/gradlew bootRun*
-
+```bash
+/gradlew bootRun
+```
 ##### Сервис будет доступен по адресу: *http://localhost:8081*
 
 ## **API :**
