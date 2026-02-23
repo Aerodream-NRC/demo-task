@@ -20,9 +20,9 @@
 ### Запуск в Docker :
 #### - Соберите JAR-файл:
 #### - Выберите дерикторию проекта и затем выполните команду :
-
+```bash
 */gradlew clean build -x test*
-
+```
 #### - запустите Docker-compose файл:
 
 */docker-compose up -d --build*
