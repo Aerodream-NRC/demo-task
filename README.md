@@ -23,7 +23,7 @@
 ```bash
 /gradlew clean build -x test
 ```
- - Переходим в папку document-generator и выполняем команду :
+ - Перейдите в папку document-generator и выполняем команду :
  ```bash
 /gradlew clean build -x test
 ```
